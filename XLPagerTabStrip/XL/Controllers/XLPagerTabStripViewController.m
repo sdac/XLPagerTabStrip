@@ -231,7 +231,7 @@
 
 -(CGFloat)offsetForChildIndex:(NSUInteger)index
 {
-    return (index * CGRectGetWidth(self.containerView.bounds) + ((CGRectGetWidth(self.containerView.bounds) - CGRectGetWidth(self.view.bounds)) * 0.5));
+    return (index * CGRectGetWidth(self.containerView.bounds) + ((CGRectGetWidth(self.containerView.bounds) - CGRectGetWidth(self.containerView.bounds)) * 0.5));
 }
 
 -(CGFloat)offsetForChildViewController:(UIViewController *)viewController
@@ -305,7 +305,7 @@
                 [self addChildViewController:childController];
                 
                 CGFloat childPosition = [self offsetForChildIndex:idx];
-                [childController.view setFrame:CGRectMake(childPosition, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.containerView.bounds))];
+                [childController.view setFrame:CGRectMake(childPosition, 0, CGRectGetWidth(self.containerView.bounds), CGRectGetHeight(self.containerView.bounds))];
                 childController.view.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
                 
                 [self.containerView addSubview:childController.view];
@@ -313,7 +313,7 @@
                 [childController endAppearanceTransition];
             } else {
                 CGFloat childPosition = [self offsetForChildIndex:idx];
-                [childController.view setFrame:CGRectMake(childPosition, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.containerView.bounds))];
+                [childController.view setFrame:CGRectMake(childPosition, 0, CGRectGetWidth(self.containerView.bounds), CGRectGetHeight(self.containerView.bounds))];
                 childController.view.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
             }
         } else {
