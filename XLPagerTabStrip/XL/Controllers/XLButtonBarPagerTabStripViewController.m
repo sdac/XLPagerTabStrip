@@ -60,9 +60,9 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    if (!self.buttonBarView.superview){
+    //if (!self.buttonBarView.superview){
         [self.view addSubview:self.buttonBarView];
-    }
+    //}
     if (!self.buttonBarView.delegate){
         self.buttonBarView.delegate = self;
     }
